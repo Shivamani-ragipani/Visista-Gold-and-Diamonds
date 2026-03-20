@@ -78,7 +78,7 @@ const HomePage = () => (
             Explore Bridal
           </Link>
           <a
-            href="https://wa.me/447947134680?text=Hi!%20I%20would%20like%20to%20enquire%20about%20Telugu%20Bridal%20Jewellery%20collections."
+            href="https://wa.me/917947134680?text=Hi!%20I%20would%20like%20to%20enquire%20about%20Telugu%20Bridal%20Jewellery%20collections."
             target="_blank"
             rel="noreferrer"
             className="btn btn-secondary btn-lg"
@@ -162,7 +162,7 @@ const HomePage = () => (
         </div>
         <div className="wa-band-actions">
           <a
-            href="https://wa.me/447947134680?text=Hi!%20I%20would%20like%20to%20enquire%20about%20jewellery%20at%20Visista%20Gold%20and%20Diamonds."
+            href="https://wa.me/917947134680?text=Hi!%20I%20would%20like%20to%20enquire%20about%20jewellery%20at%20Visista%20Gold%20and%20Diamonds."
             target="_blank"
             rel="noreferrer"
             className="btn-wa-large"

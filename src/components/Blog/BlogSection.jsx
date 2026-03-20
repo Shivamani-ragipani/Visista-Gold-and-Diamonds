@@ -46,7 +46,7 @@ const BlogSection = () => (
           <h3>{tip.title}</h3>
           <p>{tip.excerpt}</p>
           <a
-            href={`https://wa.me/447947134680?text=${encodeURIComponent('Hi! I have a question about: ' + tip.title)}`}
+            href={`https://wa.me/917947134680?text=${encodeURIComponent('Hi! I have a question about: ' + tip.title)}`}
             target="_blank"
             rel="noreferrer"
             className="blog-link"

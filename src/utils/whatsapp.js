@@ -1,5 +1,5 @@
 // WhatsApp & Cart utility — Visista Gold and Diamonds
-const BUSINESS_WHATSAPP = "447947134680";
+const BUSINESS_WHATSAPP = "917947134680";
 
 export const buildWhatsAppMessage = ({ customer, cartItems, total }) => {
   const itemLines = cartItems.map((item, i) => {

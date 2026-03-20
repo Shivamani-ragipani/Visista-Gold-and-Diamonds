@@ -248,7 +248,7 @@ const ProductDetail = () => {
           </div>
 
           <a
-            href={`https://wa.me/447947134680?text=${encodeURIComponent(
+            href={`https://wa.me/917947134680?text=${encodeURIComponent(
               `Hi! I'm interested in ${product.name} (${product.carat} ${product.metal}) — can you share more details and availability?`
             )}`}
             target="_blank"

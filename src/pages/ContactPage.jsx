@@ -23,7 +23,7 @@ const ContactPage = () => {
     const msg = encodeURIComponent(
       `Hi! I have an enquiry from your website.\n\nName: ${form.name}\nPhone: ${form.phone || 'Not provided'}\nEmail: ${form.email || 'Not provided'}\nPreferred Branch: ${form.branch || 'Any showroom'}\nMessage: ${form.message}`
     );
-    window.open(`https://wa.me/447947134680?text=${msg}`, '_blank');
+    window.open(`https://wa.me/917947134680?text=${msg}`, '_blank');
     setSent(true);
     setTimeout(() => setSent(false), 7000);
     setForm({ name: '', email: '', phone: '', branch: '', message: '' });
@@ -172,7 +172,7 @@ const ContactPage = () => {
                 <div>
                   <h4>WhatsApp</h4>
                   <p>
-                    <a href="https://wa.me/447947134680" target="_blank" rel="noreferrer">
+                    <a href="https://wa.me/917947134680" target="_blank" rel="noreferrer">
                       Chat with us on WhatsApp
                     </a>
                   </p>

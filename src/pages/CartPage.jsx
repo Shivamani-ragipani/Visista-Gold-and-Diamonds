@@ -166,7 +166,7 @@ const CartPage = () => {
               Proceed to Order
             </button>
             <a
-              href="https://wa.me/447947134680?text=Hi!%20I%20would%20like%20to%20enquire%20about%20placing%20an%20order."
+              href="https://wa.me/917947134680?text=Hi!%20I%20would%20like%20to%20enquire%20about%20placing%20an%20order."
               target="_blank"
               rel="noreferrer"
               className="btn btn-whatsapp"

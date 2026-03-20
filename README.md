@@ -64,7 +64,7 @@ Edit `src/data/branches.js` if any address needs updating:
 
 ## Business Info
 - Phone: 07947 134 680
-- WhatsApp: +44 7947 134 680 (wa.me/447947134680)
+- WhatsApp: +44 7947 134 680 (wa.me/917947134680)
 - Instagram: @visistagoldanddiamonds_
 
 ## Build for Production

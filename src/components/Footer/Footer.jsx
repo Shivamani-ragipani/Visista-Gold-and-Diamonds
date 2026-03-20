@@ -51,7 +51,7 @@ const Footer = () => (
                 <FaInstagram />
               </a>
               <a
-                href="https://wa.me/447947134680"
+                href="https://wa.me/917947134680"
                 target="_blank" rel="noreferrer"
                 className="footer-social-link"
                 aria-label="WhatsApp"
@@ -99,7 +99,7 @@ const Footer = () => (
               </li>
               <li>
                 <a
-                  href="https://wa.me/447947134680?text=Hi!%20I%20would%20like%20to%20book%20a%20consultation."
+                  href="https://wa.me/917947134680?text=Hi!%20I%20would%20like%20to%20book%20a%20consultation."
                   target="_blank" rel="noreferrer"
                 >
                   Book Consultation
@@ -125,7 +125,7 @@ const Footer = () => (
               </li>
               <li>
                 <FaWhatsapp className="fc-icon" />
-                <a href="https://wa.me/447947134680" target="_blank" rel="noreferrer">
+                <a href="https://wa.me/917947134680" target="_blank" rel="noreferrer">
                   WhatsApp Enquiry
                 </a>
               </li>
@@ -156,7 +156,7 @@ const Footer = () => (
         <div className="footer-bottom-links">
           <a href="/about">About</a>
           <a href="/contact">Contact</a>
-          <a href="https://wa.me/447947134680" target="_blank" rel="noreferrer">WhatsApp</a>
+          <a href="https://wa.me/917947134680" target="_blank" rel="noreferrer">WhatsApp</a>
         </div>
       </div>
     </div>

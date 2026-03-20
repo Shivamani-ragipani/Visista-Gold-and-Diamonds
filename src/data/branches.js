@@ -8,7 +8,7 @@ const branches = [
     city: "Hyderabad",
     address: "Road No. 36, Jubilee Hills, Hyderabad, Telangana 500033",
     phone: "07947134680",
-    whatsapp: "447947134680",
+    whatsapp: "917947134680",
     timings: "Mon–Sat: 10:00 AM – 8:00 PM",
     mapUrl:
       "https://www.google.com/maps/search/Visista+Gold+and+Diamonds+Jubilee+Hills+Hyderabad",
@@ -21,7 +21,7 @@ const branches = [
     city: "Hyderabad",
     address: "Main Road, Kothapet, Hyderabad, Telangana 500035",
     phone: "07947134680",
-    whatsapp: "447947134680",
+    whatsapp: "917947134680",
     timings: "Mon–Sat: 10:00 AM – 8:00 PM",
     mapUrl:
       "https://www.google.com/maps/search/Visista+Gold+and+Diamonds+Kothapet+Hyderabad",
@@ -34,7 +34,7 @@ const branches = [
     city: "Hyderabad",
     address: "R.P. Road, Secunderabad, Hyderabad, Telangana 500003",
     phone: "07947134680",
-    whatsapp: "447947134680",
+    whatsapp: "917947134680",
     timings: "Mon–Sat: 10:00 AM – 8:00 PM",
     mapUrl:
       "https://www.google.com/maps/search/Visista+Gold+and+Diamonds+Secunderabad+RP+Road",

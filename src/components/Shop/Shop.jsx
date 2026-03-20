@@ -239,7 +239,7 @@ const Shop = () => {
           {/* WhatsApp CTA in sidebar */}
           <div style={{padding:'24px',borderTop:'1px solid var(--border)',marginTop:'8px'}}>
             <a
-              href="https://wa.me/447947134680?text=Hi!%20I%20would%20like%20to%20enquire%20about%20your%20jewellery%20collections."
+              href="https://wa.me/917947134680?text=Hi!%20I%20would%20like%20to%20enquire%20about%20your%20jewellery%20collections."
               target="_blank" rel="noreferrer"
               style={{
                 display:'flex', alignItems:'center', gap:8,

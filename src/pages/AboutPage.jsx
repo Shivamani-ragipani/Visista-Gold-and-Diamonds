@@ -57,7 +57,7 @@ const AboutPage = () => (
           <div className="about-ctas">
             <Link to="/shop" className="btn btn-primary">Explore Collections</Link>
             <a
-              href="https://wa.me/447947134680?text=Hi!%20I%20would%20like%20to%20book%20a%20consultation%20at%20Visista%20Gold%20and%20Diamonds."
+              href="https://wa.me/917947134680?text=Hi!%20I%20would%20like%20to%20book%20a%20consultation%20at%20Visista%20Gold%20and%20Diamonds."
               target="_blank" rel="noreferrer"
               className="btn btn-dark"
             >
@@ -157,7 +157,7 @@ const AboutPage = () => (
             <FaPhone /> Call Us Now
           </a>
           <a
-            href="https://wa.me/447947134680?text=Hi!%20I'd%20like%20to%20visit%20a%20Visista%20showroom."
+            href="https://wa.me/917947134680?text=Hi!%20I'd%20like%20to%20visit%20a%20Visista%20showroom."
             target="_blank" rel="noreferrer"
             className="btn btn-whatsapp"
           >

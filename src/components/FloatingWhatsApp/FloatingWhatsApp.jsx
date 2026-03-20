@@ -36,7 +36,7 @@ const FloatingWhatsApp = () => {
         </div>
       )}
       <a
-        href="https://wa.me/447947134680?text=Hi!%20I%20would%20like%20to%20enquire%20about%20Visista%20Gold%20and%20Diamonds%20jewellery."
+        href="https://wa.me/917947134680?text=Hi!%20I%20would%20like%20to%20enquire%20about%20Visista%20Gold%20and%20Diamonds%20jewellery."
         target="_blank"
         rel="noreferrer"
         className="fwa-btn"

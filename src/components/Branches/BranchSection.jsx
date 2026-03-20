@@ -61,7 +61,7 @@ const BranchSection = () => (
       <div className="branch-cta-strip">
         <p>Can't visit in person? Explore and order online, we'll deliver to your door.</p>
         <a
-          href="https://wa.me/447947134680?text=Hi!%20I%20would%20like%20to%20book%20a%20private%20jewellery%20consultation%20at%20Visista%20Gold%20and%20Diamonds."
+          href="https://wa.me/917947134680?text=Hi!%20I%20would%20like%20to%20book%20a%20private%20jewellery%20consultation%20at%20Visista%20Gold%20and%20Diamonds."
           target="_blank"
           rel="noreferrer"
           className="btn btn-primary"
