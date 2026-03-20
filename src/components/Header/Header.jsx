@@ -49,7 +49,7 @@ const Header = () => {
         <div className="container">
           <span className="top-phone">
             <FaPhone className="top-icon" aria-hidden="true" />
-            <a href="tel:07947134680" aria-label="Call us">07947 134 680</a>
+            <a href="tel:917947134680" aria-label="Call us">07947 134 680</a>
           </span>
           <span className="top-brand" aria-hidden="true">
             ✦ Telugu Bridal · Gold · Natural Diamonds · Polki ✦

@@ -164,7 +164,7 @@ const ContactPage = () => {
                 <div className="ci-icon"><FaPhone /></div>
                 <div>
                   <h4>Phone</h4>
-                  <p><a href="tel:07947134680">07947 134 680</a></p>
+                  <p><a href="tel:917947134680">07947 134 680</a></p>
                 </div>
               </div>
               <div className="contact-info-item">
