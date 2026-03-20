@@ -77,13 +77,12 @@ const Header = () => {
             <span className="logo-sub">Gold &amp; Diamonds</span>
           </Link>
 
-          {/* Nav */}
-          <nav
-            ref={navRef}
-            className={`main-nav${isMenuOpen ? ' open' : ''}`}
-            aria-label="Main navigation"
-            aria-expanded={isMenuOpen}
-          >
+         <nav
+  ref={navRef}
+  id="main-nav"
+  className={`main-nav${isMenuOpen ? ' open' : ''}`}
+  aria-label="Main navigation"
+>
             {/* Mobile nav close button */}
             <button
               className="mobile-nav-close"
