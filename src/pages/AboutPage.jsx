@@ -68,7 +68,7 @@ const AboutPage = () => (
 
         <div className="about-story-img">
           <img
-            src="/banner4.png"
+            src="/showroom.png"
             alt="Visista Gold showroom"
             onError={e => { e.target.src = '/banner1.png'; }}
           />
