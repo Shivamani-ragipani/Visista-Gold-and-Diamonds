@@ -1,0 +1,194 @@
+/* ═══════════════════════════════════════════════════════
+   VISISTA — About Page v3.0 (Luxury)
+   ═══════════════════════════════════════════════════════ */
+
+.about-page { background: var(--white); }
+
+/* ─── Story ─────────────────────────────────────────── */
+.about-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-story-text { display: flex; flex-direction: column; gap: 18px; }
+.about-story-text .section-title { margin-bottom: 0; }
+.about-story-text p {
+  font-family: var(--font-elegant); font-style: italic;
+  font-size: 17px; color: var(--text-mid); line-height: 1.9;
+}
+.about-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+.about-ctas .btn-secondary { color: var(--charcoal); border-color: var(--border); }
+.about-ctas .btn-secondary:hover { background: var(--charcoal); color: var(--white); border-color: var(--charcoal); }
+
+.gold-divider-left {
+  width: 80px; height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent) !important;
+  margin: 0 0 8px !important;
+}
+.gold-divider-left::after { display: none !important; }
+
+.about-story-img { position: relative; }
+.about-story-img img {
+  width: 100%; aspect-ratio: 3/4; object-fit: cover;
+  border: 1px solid var(--border);
+}
+.about-img-badge {
+  position: absolute; bottom: -20px; left: -20px;
+  background: var(--charcoal);
+  border: 2px solid var(--gold);
+  padding: 22px 28px;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+}
+.badge-num {
+  font-family: var(--font-display);
+  font-size: 44px; font-weight: 700;
+  color: var(--gold-light); line-height: 1;
+}
+.badge-text {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,0.6);
+  line-height: 1.5; margin-top: 6px;
+}
+
+/* ─── Values Grid ───────────────────────────────────── */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 8px;
+}
+.value-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 36px 28px;
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+  position: relative; overflow: hidden;
+}
+.value-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0; transition: opacity 0.4s;
+}
+.value-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  transform: translateY(-5px);
+}
+.value-card:hover::before { opacity: 1; }
+.value-icon {
+  color: var(--gold); font-size: 28px; margin-bottom: 16px;
+}
+.value-card h3 {
+  font-family: var(--font-display);
+  font-size: 17px; font-weight: 600; color: var(--charcoal);
+  margin-bottom: 10px;
+}
+.value-card p {
+  font-size: 13px; color: var(--text-mid); line-height: 1.75;
+  font-family: var(--font-body);
+}
+
+/* ─── Stats Strip ───────────────────────────────────── */
+.stats-strip {
+  background: linear-gradient(135deg, #0F0F0F, #1E1608);
+  padding: 60px 0;
+  position: relative; overflow: hidden;
+}
+.stats-strip::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(201,151,58,0.07) 0%, transparent 60%);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative; z-index: 1;
+}
+.stat-item {
+  text-align: center; padding: 0 20px;
+  border-right: 1px solid rgba(201,151,58,0.15);
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 52px; font-weight: 700;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; line-height: 1;
+}
+.stat-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: rgba(255,255,255,0.4);
+  margin-top: 10px; display: block;
+}
+
+/* ─── Instagram strip ───────────────────────────────── */
+.about-insta {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+}
+.about-insta-link {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 15px; font-weight: 700; color: var(--gold);
+  transition: color 0.3s;
+  font-family: var(--font-body);
+}
+.about-insta-link:hover { color: var(--gold-dark); }
+.about-insta p {
+  font-size: 13px; color: var(--text-light);
+  font-family: var(--font-elegant); font-style: italic;
+}
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 1000px) {
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid  { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:nth-child(2) { border-right: none; }
+  .stat-item:nth-child(3), .stat-item:nth-child(4) {
+    border-top: 1px solid rgba(201,151,58,0.15);
+    padding-top: 32px; margin-top: 8px;
+  }
+}
+@media (max-width: 768px) {
+  .about-story { grid-template-columns: 1fr; gap: 48px; }
+  .about-img-badge { bottom: -16px; left: -10px; padding: 16px 20px; }
+}
+@media (max-width: 540px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .stats-grid  { grid-template-columns: 1fr 1fr; }
+  .stat-num { font-size: 36px; }
+}
+
+/* ─── MOBILE IMPROVEMENTS v4.0 ──────────────────────────── */
+@media (max-width: 900px) {
+  .values-grid { grid-template-columns: 1fr 1fr; }
+  .stats-grid  { grid-template-columns: 1fr 1fr; }
+  .stat-item:nth-child(2) { border-right: none; }
+  .stat-item:nth-child(3), .stat-item:nth-child(4) {
+    border-top: 1px solid rgba(201,151,58,0.15);
+    padding-top: 28px; margin-top: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-story { grid-template-columns: 1fr; gap: 40px; }
+  .about-img-badge { bottom: -12px; left: -8px; padding: 14px 18px; }
+  .badge-num { font-size: 36px; }
+  .about-ctas .btn { min-height: 44px; }
+}
+
+@media (max-width: 600px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .stats-grid  { grid-template-columns: 1fr 1fr; }
+  .stat-num { font-size: 38px; }
+  .stat-label { font-size: 9px; }
+  .value-card { padding: 28px 22px; }
+  .about-story-text p { font-size: 16px; }
+}
+
+@media (max-width: 480px) {
+  .stats-strip { padding: 48px 0; }
+  .stat-item { padding: 0 12px; }
+  .about-ctas { flex-direction: column; }
+  .about-ctas .btn { width: 100%; justify-content: center; }
+}

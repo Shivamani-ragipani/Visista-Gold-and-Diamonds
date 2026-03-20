@@ -1,0 +1,156 @@
+/* ═══════════════════════════════════════════════════════
+   VISISTA — Featured Categories v3.0 (Luxury)
+   ═══════════════════════════════════════════════════════ */
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.cat-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  display: block;
+  cursor: pointer;
+  background: var(--charcoal);
+}
+
+/* Top-border reveal on hover */
+.cat-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  z-index: 5; opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.cat-card:hover::before { opacity: 1; }
+
+.cat-img-wrap {
+  position: absolute; inset: 0;
+}
+.cat-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: brightness(0.9) saturate(0.9);
+}
+.cat-card:hover .cat-img-wrap img {
+  transform: scale(1.1);
+  filter: brightness(0.85) saturate(1.05);
+}
+
+/* Gradient overlay */
+.cat-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10,8,5,0.9) 0%,
+    rgba(10,8,5,0.3) 50%,
+    rgba(10,8,5,0.05) 100%
+  );
+  transition: all 0.4s ease;
+}
+.cat-card:hover .cat-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(10,8,5,0.95) 0%,
+    rgba(10,8,5,0.5) 60%,
+    rgba(10,8,5,0.1) 100%
+  );
+}
+
+/* Label area */
+.cat-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 30px 22px; color: var(--white); z-index: 2;
+}
+
+.cat-number {
+  position: absolute; top: 16px; right: 16px;
+  font-family: var(--font-display);
+  font-size: 36px; font-weight: 700;
+  color: rgba(201,151,58,0.15); z-index: 2;
+  line-height: 1;
+  transition: color 0.4s ease;
+}
+.cat-card:hover .cat-number { color: rgba(201,151,58,0.25); }
+
+.cat-sub {
+  font-size: 9px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold-light);
+  display: block; margin-bottom: 6px;
+  transition: color 0.3s;
+}
+
+.cat-label h3 {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 700;
+  margin-bottom: 10px; line-height: 1.2;
+  transition: color 0.3s;
+}
+.cat-card:hover .cat-label h3 { color: var(--white); }
+
+/* Animated bottom line */
+.cat-bottom-line {
+  width: 0; height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-bottom: 12px;
+}
+.cat-card:hover .cat-bottom-line { width: 48px; }
+
+.cat-cta {
+  font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--gold-light);
+  opacity: 0; display: flex; align-items: center; gap: 8px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(6px);
+}
+.cat-cta::after {
+  content: '→'; font-size: 12px;
+  transition: transform 0.3s ease;
+}
+.cat-card:hover .cat-cta {
+  opacity: 1; transform: translateY(0);
+}
+.cat-card:hover .cat-cta::after {
+  transform: translateX(4px);
+}
+
+/* ─── Featured (first card = wider) ────────────────── */
+.cat-grid .cat-card:first-child {
+  grid-row: span 1;
+}
+
+@media (max-width: 900px) {
+  .cat-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .cat-grid { gap: 10px; }
+  .cat-label { padding: 20px 16px; }
+  .cat-label h3 { font-size: 18px; }
+  .cat-number { font-size: 28px; }
+}
+
+/* ─── MOBILE IMPROVEMENTS v4.0 ──────────────────────────── */
+@media (max-width: 900px) {
+  .cat-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+
+@media (max-width: 540px) {
+  .cat-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .cat-label { padding: 18px 14px; }
+  .cat-label h3 { font-size: 16px; }
+  .cat-sub { font-size: 8px; letter-spacing: 2px; }
+  .cat-number { font-size: 28px; top: 10px; right: 10px; }
+}
+
+@media (max-width: 380px) {
+  .cat-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .cat-label h3 { font-size: 15px; }
+}

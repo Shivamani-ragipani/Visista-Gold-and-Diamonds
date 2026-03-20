@@ -1,0 +1,83 @@
+/* ═══════════════════════════════════════════════════════
+   VISISTA — Gold Ticker v3.0
+   ═══════════════════════════════════════════════════════ */
+.gold-ticker {
+  background: #0A0805;
+  border-bottom: 1px solid rgba(201,151,58,0.2);
+  padding: 11px 0;
+  position: relative;
+  overflow: hidden;
+}
+.gold-ticker::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+}
+.gt-inner {
+  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+}
+.gt-label {
+  font-size: 9px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: rgba(255,255,255,0.35);
+  flex-shrink: 0; white-space: nowrap;
+}
+.gt-rates {
+  display: flex; align-items: center; gap: 16px; flex: 1;
+}
+.gt-rate { display: flex; align-items: center; gap: 10px; }
+.gt-karat {
+  font-size: 9px; font-weight: 700; letter-spacing: 2px;
+  color: rgba(255,255,255,0.4); text-transform: uppercase;
+  background: rgba(255,255,255,0.06);
+  padding: 3px 8px; border-radius: 2px;
+}
+.gt-price {
+  font-family: var(--font-display);
+  font-size: 15px; font-weight: 600;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gt-divider { color: rgba(255,255,255,0.1); font-size: 20px; }
+.gt-meta {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 10px; color: rgba(255,255,255,0.25);
+  margin-left: auto; flex-shrink: 0;
+}
+.gt-source { color: rgba(255,255,255,0.15); }
+.gt-refresh {
+  background: none; border: none; cursor: pointer;
+  color: rgba(255,255,255,0.25); font-size: 11px; padding: 3px;
+  transition: color 0.2s; display: flex; align-items: center;
+}
+.gt-refresh:hover { color: var(--gold-light); }
+.gt-loading, .gt-error {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; color: rgba(255,255,255,0.35);
+  font-style: italic; font-family: var(--font-elegant);
+}
+.gt-error { color: #e07b7b; }
+@media (max-width: 640px) {
+  .gt-label { display: none; }
+  .gt-meta .gt-source { display: none; }
+  .gt-price { font-size: 13px; }
+}
+
+/* ─── MOBILE IMPROVEMENTS v4.0 ──────────────────────────── */
+@media (max-width: 640px) {
+  .gold-ticker { padding: 10px 0; }
+  .gt-inner { gap: 12px; flex-wrap: nowrap; }
+  .gt-label { display: none; }
+  .gt-rates { gap: 10px; }
+  .gt-rate  { gap: 6px; }
+  .gt-price { font-size: 13px; }
+  .gt-karat { font-size: 8px; padding: 2px 6px; }
+  .gt-divider { font-size: 16px; }
+  .gt-meta .gt-source { display: none; }
+  .gt-meta { font-size: 9px; gap: 6px; }
+}
+
+@media (max-width: 380px) {
+  .gt-divider { display: none; }
+  .gt-rates { gap: 8px; }
+}

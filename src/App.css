@@ -1,0 +1,271 @@
+/* ============================================================
+   VISISTA GOLD AND DIAMONDS — Global Theme v3.0 (Luxury)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --gold:           #C9973A;
+  --gold-light:     #E4C06A;
+  --gold-pale:      #F5E6C8;
+  --gold-dark:      #9A7020;
+  --gold-deep:      #7A5510;
+  --cream:          #FAF6EF;
+  --ivory:          #F5F0E6;
+  --pearl:          #EDE8DE;
+  --charcoal:       #1A1A1A;
+  --dark:           #0F0F0F;
+  --white:          #FFFFFF;
+  --text-dark:      #1A1A1A;
+  --text-mid:       #4A4540;
+  --text-light:     #8A8078;
+  --text-ghost:     #B8B0A4;
+  --maroon:         #7B2D3C;
+  --maroon-light:   #9B3D4E;
+  --maroon-deep:    #5C1F2A;
+  --border:         rgba(201, 151, 58, 0.2);
+  --border-dark:    rgba(201, 151, 58, 0.4);
+  --shadow-sm:      0 2px 12px rgba(0,0,0,0.08);
+  --shadow:         0 8px 40px rgba(0,0,0,0.12);
+  --shadow-lg:      0 20px 60px rgba(0,0,0,0.2);
+  --shadow-gold:    0 8px 32px rgba(201, 151, 58, 0.25);
+  --font-display:   'Playfair Display', Georgia, serif;
+  --font-body:      'Jost', system-ui, sans-serif;
+  --font-elegant:   'Cormorant Garamond', Georgia, serif;
+  --ease-out:       cubic-bezier(0.16, 1, 0.3, 1);
+  --transition:     0.3s ease;
+  --radius-sm:      3px;
+  --radius:         6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background: var(--white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+.app { display: flex; flex-direction: column; min-height: 100vh; }
+main { flex: 1; }
+
+.container { max-width: 1340px; margin: 0 auto; padding: 0 28px; }
+.section { padding: 100px 0; }
+.section-sm { padding: 60px 0; }
+.bg-cream { background: var(--cream); }
+.bg-ivory { background: var(--ivory); }
+.bg-dark  { background: var(--charcoal); }
+.bg-pearl { background: var(--pearl); }
+
+.section-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.5vw, 50px);
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.section-title-white {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.5vw, 50px);
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.15;
+}
+
+.section-subtitle {
+  font-family: var(--font-elegant);
+  font-size: 19px;
+  color: var(--text-mid);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.section-header { text-align: center; margin-bottom: 64px; }
+
+/* Gold Divider */
+.gold-divider {
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 20px auto;
+  position: relative;
+}
+.gold-divider::after {
+  content: '◆';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--gold);
+  font-size: 7px;
+  background: var(--white);
+  padding: 0 6px;
+}
+
+/* Page Header */
+.page-header {
+  background: linear-gradient(135deg, var(--charcoal) 0%, #2A2218 100%);
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(201,151,58,0.06) 0%, transparent 60%),
+                    radial-gradient(circle at 80% 20%, rgba(201,151,58,0.04) 0%, transparent 40%);
+}
+.page-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: 700;
+  color: var(--white);
+  position: relative;
+}
+.page-header h1 em { color: var(--gold-light); font-style: italic; }
+.breadcrumb {
+  font-size: 12px; color: rgba(255,255,255,0.45);
+  letter-spacing: 1px; margin-top: 12px; position: relative;
+}
+.breadcrumb a { color: var(--gold-light); transition: color var(--transition); }
+.breadcrumb a:hover { color: var(--gold); }
+.breadcrumb span { color: rgba(255,255,255,0.75); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 28px;
+  font-family: var(--font-body);
+  font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+  text-transform: uppercase; border: none; cursor: pointer;
+  transition: all 0.35s var(--ease-out); text-decoration: none;
+  white-space: nowrap; border-radius: var(--radius-sm);
+}
+.btn-primary { background: var(--gold); color: var(--dark); }
+.btn-primary:hover { background: var(--gold-dark); color: var(--white); box-shadow: var(--shadow-gold); transform: translateY(-2px); }
+.btn-secondary { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.5); }
+.btn-secondary:hover { background: var(--white); color: var(--charcoal); border-color: var(--white); }
+.btn-dark { background: var(--charcoal); color: var(--white); }
+.btn-dark:hover { background: var(--dark); box-shadow: 0 6px 20px rgba(0,0,0,0.3); transform: translateY(-1px); }
+.btn-outline-gold { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+.btn-outline-gold:hover { background: var(--gold); color: var(--dark); }
+.btn-whatsapp { background: #25D366; color: var(--white); }
+.btn-whatsapp:hover { background: #1eb855; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37,211,102,0.3); }
+.btn-sm { padding: 9px 18px; font-size: 10px; letter-spacing: 2px; }
+.btn-lg { padding: 17px 38px; font-size: 12px; letter-spacing: 3px; }
+
+/* Bridal Banner */
+.bridal-banner {
+  background: linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 50%, #3D1520 100%);
+  position: relative; overflow: hidden; padding: 100px 0;
+}
+.bridal-banner::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(ellipse at 30% 50%, rgba(201,151,58,0.12) 0%, transparent 60%),
+                    radial-gradient(ellipse at 70% 50%, rgba(255,255,255,0.04) 0%, transparent 50%);
+}
+.bridal-inner { position: relative; z-index: 1; text-align: center; max-width: 700px; margin: 0 auto; padding: 0 24px; }
+.bridal-sub { font-family: var(--font-elegant); font-size: 19px; color: rgba(255,255,255,0.8); font-style: italic; line-height: 1.7; margin: 20px 0 36px; }
+.bridal-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--ivory); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+::selection { background: var(--gold-pale); color: var(--charcoal); }
+
+/* Animations */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { animation: spin 1.2s linear infinite; }
+
+
+/* ============================================================
+   MOBILE RESPONSIVENESS IMPROVEMENTS v4.0
+   ─────────────────────────────────────────────────────────────
+   Preserves all desktop styles. Only adds / overrides at
+   mobile / tablet breakpoints.
+   ============================================================ */
+
+/* ── Smooth scroll on all devices ── */
+html { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+
+/* ── Tap highlight suppression ── */
+* { -webkit-tap-highlight-color: transparent; }
+
+/* ── Fluid container on small screens ── */
+@media (max-width: 600px) {
+  .container { padding: 0 16px; }
+  .section    { padding: 64px 0; }
+  .section-sm { padding: 40px 0; }
+  .section-header { margin-bottom: 40px; }
+  .section-label  { font-size: 9px; letter-spacing: 4px; }
+  .section-title  { font-size: clamp(22px, 6vw, 32px); }
+  .section-subtitle { font-size: 16px; }
+}
+
+@media (max-width: 400px) {
+  .container { padding: 0 12px; }
+}
+
+/* ── Bridal banner – disable parallax on mobile (perf) ── */
+@media (max-width: 768px) {
+  .bridal-banner { background-attachment: scroll !important; }
+}
+
+/* ── Global button minimum touch target ── */
+@media (max-width: 768px) {
+  .btn { min-height: 44px; }
+  .btn-sm { min-height: 40px; }
+}
+
+/* ── WA band responsive ── */
+@media (max-width: 640px) {
+  .wa-band { padding: 48px 0; }
+  .wa-band-inner { flex-direction: column; align-items: center; text-align: center; }
+  .wa-band-text { text-align: center; }
+  .wa-band-actions { justify-content: center; width: 100%; }
+  .wa-band-actions .btn-wa-large,
+  .wa-band-actions .btn { width: 100%; justify-content: center; }
+}
+
+/* ── Bridal CTA buttons wrap ── */
+@media (max-width: 480px) {
+  .bridal-ctas { flex-direction: column; align-items: center; }
+  .bridal-ctas .btn { width: 100%; max-width: 300px; justify-content: center; }
+  .bridal-banner { padding: 80px 0; }
+  .bridal-sub { font-size: 16px; }
+}
+
+/* ── Page header ── */
+@media (max-width: 600px) {
+  .page-header { padding: 56px 0 40px; }
+  .page-header h1 { font-size: clamp(26px, 8vw, 40px); }
+}
+
+/* ── Spotlight grid full-width on mobile ── */
+@media (max-width: 480px) {
+  .spotlight-grid { grid-template-columns: 1fr !important; }
+  .spotlight-grid .spotlight-card { display: block !important; min-height: 280px; }
+  .spotlight-card { min-height: 280px; }
+}

@@ -1,0 +1,285 @@
+/* ─── Top Bar ──────────────────────────────────────────── */
+.top-bar {
+  background: var(--dark);
+  padding: 9px 0;
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(201,151,58,0.15);
+}
+.top-bar .container {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.top-bar a { color: var(--gold-light); transition: color var(--transition); }
+.top-bar a:hover { color: var(--gold); }
+.top-icon { margin-right: 6px; vertical-align: middle; font-size: 10px; }
+.top-brand {
+  color: rgba(201,151,58,0.8);
+  font-family: var(--font-elegant);
+  font-style: italic; font-size: 13px;
+  letter-spacing: 1px;
+}
+.top-insta { display: flex; align-items: center; gap: 5px; font-size: 11px; }
+.top-phone { display: flex; align-items: center; }
+
+/* ─── Main Header ──────────────────────────────────────── */
+.header {
+  width: 100%; position: sticky; top: 0; z-index: 1000;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.4s ease;
+}
+.header.scrolled {
+  background: rgba(26,26,26,0.97);
+  border-bottom-color: rgba(201,151,58,0.2);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 28px; gap: 20px;
+}
+
+/* ─── Logo ──────────────────────────────────────────────── */
+.logo { display: flex; flex-direction: column; line-height: 1; text-decoration: none; flex-shrink: 0; }
+.logo-main {
+  font-family: var(--font-display);
+  font-size: 24px; font-weight: 700;
+  color: var(--charcoal); letter-spacing: 5px;
+  transition: color 0.4s ease;
+}
+.logo-sub {
+  font-family: var(--font-body); font-size: 8px;
+  font-weight: 600; letter-spacing: 4px;
+  color: var(--gold); text-transform: uppercase; margin-top: 3px;
+}
+.header.scrolled .logo-main { color: var(--white); }
+
+/* ─── Nav ───────────────────────────────────────────────── */
+.main-nav { flex: 1; display: flex; justify-content: center; }
+.main-nav ul { display: flex; gap: 40px; }
+.main-nav > ul > li > a {
+  font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--charcoal);
+  padding: 8px 0; display: block;
+  transition: color var(--transition); position: relative;
+}
+.main-nav > ul > li > a::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 0; height: 1px; background: var(--gold);
+  transition: width 0.35s var(--ease-out);
+}
+.main-nav > ul > li > a:hover::after,
+.main-nav > ul > li > a.active::after { width: 100%; }
+.main-nav > ul > li > a:hover,
+.main-nav > ul > li > a.active { color: var(--gold); }
+.header.scrolled .main-nav > ul > li > a { color: rgba(255,255,255,0.75); }
+.header.scrolled .main-nav > ul > li > a:hover { color: var(--gold-light); }
+
+/* ─── Dropdown ──────────────────────────────────────────── */
+.has-dropdown { position: relative; }
+.dropdown-menu {
+  position: absolute; top: calc(100% + 14px); left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  width: 380px;
+  background: var(--white);
+  border-top: 2px solid var(--gold);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  opacity: 0; visibility: hidden;
+  transition: all 0.3s var(--ease-out);
+  padding: 28px; z-index: 200;
+}
+.has-dropdown:hover .dropdown-menu {
+  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+}
+.dropdown-content { display: flex; gap: 32px; }
+.dropdown-column { flex: 1; }
+.dropdown-column h4 {
+  font-family: var(--font-body); font-size: 9px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--gold);
+  margin-bottom: 14px; padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.dropdown-menu ul { display: flex; flex-direction: column; gap: 2px; }
+.dropdown-menu a {
+  font-size: 13px; font-weight: 400; letter-spacing: 0.3px;
+  padding: 7px 0; color: var(--text-mid); display: block;
+  transition: all 0.2s ease;
+}
+.dropdown-menu a:hover { color: var(--gold); padding-left: 8px; }
+.dropdown-menu a::after { display: none !important; }
+
+/* ─── Header Actions ────────────────────────────────────── */
+.header-actions { display: flex; align-items: center; gap: 20px; flex-shrink: 0; }
+.cart-btn {
+  position: relative; color: var(--charcoal); font-size: 20px;
+  display: flex; align-items: center; transition: color var(--transition);
+  min-width: 44px; min-height: 44px; justify-content: center;
+}
+.cart-btn:hover { color: var(--gold); }
+.header.scrolled .cart-btn { color: var(--white); }
+.header.scrolled .cart-btn:hover { color: var(--gold-light); }
+.cart-count {
+  position: absolute; top: 2px; right: 2px;
+  background: var(--gold); color: var(--dark);
+  font-size: 9px; font-weight: 700;
+  width: 17px; height: 17px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.header-wa-btn {
+  background: #25D366; color: var(--white);
+  padding: 9px 18px; border-radius: 3px;
+  font-size: 10px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 6px;
+  transition: all 0.3s ease;
+}
+.header-wa-btn:hover { background: #1eb855; transform: translateY(-1px); }
+
+/* ─── Hamburger ─────────────────────────────────────────── */
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer;
+  padding: 10px 4px; min-width: 44px; min-height: 44px;
+  align-items: center; justify-content: center;
+}
+.hamburger span {
+  width: 24px; height: 1.5px; background: var(--charcoal);
+  transition: all 0.3s ease; display: block;
+}
+.header.scrolled .hamburger span { background: var(--white); }
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: translateX(-8px); }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+
+/* ─── Mobile Nav close button ───────────────────────────── */
+.mobile-nav-close {
+  display: none;
+  position: absolute; top: 20px; right: 20px;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.7); font-size: 16px;
+  width: 44px; height: 44px; border-radius: 50%;
+  cursor: pointer; align-items: center; justify-content: center;
+  transition: all 0.3s ease; z-index: 10;
+}
+.mobile-nav-close:hover { background: rgba(255,255,255,0.15); color: var(--white); }
+
+/* Mobile nav brand */
+.mobile-nav-brand { display: none; text-align: center; margin-bottom: 32px; }
+.mnb-main {
+  display: block; font-family: var(--font-display);
+  font-size: 28px; font-weight: 700; color: var(--white);
+  letter-spacing: 6px;
+}
+.mnb-sub {
+  display: block; font-size: 9px; font-weight: 600;
+  letter-spacing: 4px; color: var(--gold);
+  text-transform: uppercase; margin-top: 4px;
+}
+
+/* Mobile nav footer actions */
+.mobile-nav-footer { display: none; }
+
+/* Overlay behind mobile nav */
+.nav-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 899;
+  backdrop-filter: blur(2px);
+}
+
+/* ─── Mobile Nav ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hamburger { display: flex; }
+  .header-wa-btn { display: none; }
+  .nav-overlay { display: block; }
+
+  .main-nav {
+    position: fixed;
+    top: 0; right: -100%; bottom: 0;
+    left: auto;
+    width: min(340px, 85vw);
+    background: var(--charcoal);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    transition: right 0.4s var(--ease-out);
+    z-index: 900;
+    padding: 80px 0 40px;
+    overflow-y: auto;
+    box-shadow: -8px 0 40px rgba(0,0,0,0.4);
+  }
+  .main-nav.open { right: 0; }
+
+  .mobile-nav-close { display: flex; }
+  .mobile-nav-brand { display: block; padding: 0 28px; }
+
+  .main-nav ul {
+    flex-direction: column; gap: 0; align-items: stretch;
+    padding: 0 0 24px;
+  }
+  .main-nav > ul > li > a {
+    color: rgba(255,255,255,0.85); font-size: 15px; letter-spacing: 3px;
+    padding: 14px 28px; display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.2s ease;
+  }
+  .main-nav > ul > li:last-child > a { border-bottom: none; }
+  .main-nav > ul > li > a:hover,
+  .main-nav > ul > li > a.active { color: var(--gold-light); padding-left: 36px; }
+  .main-nav > ul > li > a::after { display: none; }
+
+  .dropdown-menu { display: none; }
+
+  .mobile-nav-footer {
+    display: flex; flex-direction: column; gap: 10px;
+    padding: 24px 28px 0;
+    margin-top: auto;
+    border-top: 1px solid rgba(201,151,58,0.15);
+  }
+  .mobile-nav-wa {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    background: #25D366; color: white;
+    padding: 14px 20px; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    border-radius: 3px; text-decoration: none;
+    transition: background 0.3s;
+  }
+  .mobile-nav-wa:hover { background: #1eb855; }
+  .mobile-nav-call {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 12px 20px; font-size: 11px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    border-radius: 3px; text-decoration: none;
+    transition: all 0.3s;
+  }
+  .mobile-nav-call:hover { background: rgba(255,255,255,0.1); color: white; }
+
+  .header-inner { padding: 14px 20px; }
+  .logo-main { font-size: 20px; letter-spacing: 4px; }
+}
+
+/* ─── Tablet landscape ───────────────────────────────────── */
+@media (max-width: 768px) and (min-width: 601px) {
+  .top-brand { font-size: 11px; }
+}
+
+/* ─── Small mobile ───────────────────────────────────────── */
+@media (max-width: 480px) {
+  .top-bar .container { flex-direction: row; gap: 8px; }
+  .top-brand { display: none; }
+  .top-insta-handle { display: none; }
+  .top-insta { gap: 4px; }
+  .top-bar { padding: 7px 0; }
+  .header-inner { padding: 12px 16px; }
+  .logo-main { font-size: 18px; letter-spacing: 3px; }
+  .logo-sub { font-size: 7px; letter-spacing: 3px; }
+}
+
+@media (max-width: 375px) {
+  .top-bar { display: none; }
+}

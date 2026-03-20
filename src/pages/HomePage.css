@@ -1,0 +1,275 @@
+/* ═══════════════════════════════════════════════════════
+   VISISTA — Home Page v3.0 (Premium)
+   ═══════════════════════════════════════════════════════ */
+
+.home-page { overflow-x: hidden; }
+
+/* ─── Bridal Banner ────────────────────────────────── */
+.bridal-banner {
+  background-image: url('./../../public/banner5.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  padding: 140px 0;
+  text-align: center;
+}
+.bridal-banner::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(91,31,42,0.88) 0%,
+    rgba(60,14,25,0.78) 50%,
+    rgba(15,15,15,0.65) 100%
+  );
+}
+.bridal-inner {
+  position: relative; z-index: 2;
+  max-width: 720px; margin: 0 auto; padding: 0 24px;
+}
+.bridal-inner .section-label { color: var(--gold-light); }
+.bridal-sub {
+  font-family: var(--font-elegant);
+  font-style: italic;
+  font-size: clamp(17px, 2.2vw, 21px);
+  color: rgba(255,255,255,0.82);
+  margin: 20px 0 36px;
+  line-height: 1.75;
+}
+.bridal-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ─── Spotlight Grid ────────────────────────────────── */
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.spotlight-card {
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+  display: block;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+.spotlight-card:hover { transform: scale(1.015); }
+.spotlight-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  z-index: 5; opacity: 0; transition: opacity 0.4s ease;
+}
+.spotlight-card:hover::before { opacity: 1; }
+
+.spotlight-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(8,6,3,0.92) 0%,
+    rgba(8,6,3,0.35) 55%,
+    rgba(8,6,3,0.08) 100%
+  );
+  transition: background 0.4s ease;
+}
+.spotlight-card:hover .spotlight-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(8,6,3,0.96) 0%,
+    rgba(8,6,3,0.55) 65%,
+    rgba(8,6,3,0.15) 100%
+  );
+}
+
+.spotlight-content {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 40px 32px; z-index: 2;
+}
+.spotlight-label {
+  display: block; font-size: 9px; font-weight: 700;
+  letter-spacing: 4px; text-transform: uppercase;
+  color: var(--gold-light); margin-bottom: 10px;
+}
+.spotlight-content h3 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.5vw, 32px); font-weight: 700;
+  color: var(--white); line-height: 1.15;
+  margin-bottom: 10px; white-space: pre-line;
+}
+.spotlight-content p {
+  font-family: var(--font-elegant);
+  font-style: italic; font-size: 14px;
+  color: rgba(255,255,255,0.65); margin-bottom: 16px;
+  line-height: 1.6;
+}
+.spotlight-line {
+  width: 0; height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-bottom: 14px;
+}
+.spotlight-card:hover .spotlight-line { width: 56px; }
+.spotlight-cta {
+  font-size: 10px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold-light);
+  opacity: 0; display: block;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  transform: translateY(6px);
+}
+.spotlight-card:hover .spotlight-cta {
+  opacity: 1; transform: translateY(0);
+}
+
+/* ─── WhatsApp CTA Band ──────────────────────────────── */
+.wa-band {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d1a0f 100%);
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+.wa-band::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(ellipse at 20% 50%, rgba(37,211,102,0.06) 0%, transparent 50%),
+                    radial-gradient(ellipse at 80% 50%, rgba(37,211,102,0.04) 0%, transparent 40%);
+}
+.wa-band-inner {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 32px; flex-wrap: wrap;
+}
+.wa-band-text .section-label { color: #25D366; }
+.wa-band-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 38px); font-weight: 700;
+  color: var(--white); line-height: 1.2;
+  margin-bottom: 8px;
+}
+.wa-band-text p {
+  font-family: var(--font-elegant);
+  font-size: 17px; font-style: italic;
+  color: rgba(255,255,255,0.5);
+}
+.wa-band-actions {
+  display: flex; gap: 14px; flex-wrap: wrap; flex-shrink: 0;
+}
+.btn-wa-large {
+  background: #25D366; color: var(--white);
+  padding: 16px 32px; border-radius: 3px;
+  font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 10px;
+  transition: all 0.3s ease;
+  font-family: var(--font-body);
+  border: none; cursor: pointer; text-decoration: none;
+}
+.btn-wa-large:hover {
+  background: #1db954; transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37,211,102,0.35);
+}
+
+/* ─── Instagram CTA ─────────────────────────────────── */
+.insta-cta {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  padding: 3px; display: inline-block; border-radius: 4px;
+}
+.insta-cta-inner {
+  background: var(--charcoal); border-radius: 2px;
+  padding: 12px 24px; font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--white);
+  display: flex; align-items: center; gap: 8px;
+  transition: background 0.3s;
+}
+.insta-cta:hover .insta-cta-inner { background: transparent; }
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .spotlight-grid { grid-template-columns: 1fr 1fr; }
+  .spotlight-grid .spotlight-card:last-child { display: none; }
+  .wa-band-inner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 600px) {
+  .bridal-banner { padding: 90px 0; background-attachment: scroll; }
+  .spotlight-grid { grid-template-columns: 1fr; }
+  .spotlight-grid .spotlight-card:last-child { display: block; }
+  .spotlight-card { min-height: 320px; }
+}
+.wa-band-text { flex: 1; }
+
+/* ─── MOBILE IMPROVEMENTS v4.0 ──────────────────────────── */
+@media (max-width: 900px) {
+  .spotlight-grid { grid-template-columns: 1fr 1fr; }
+  .wa-band-inner  { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .wa-band-text   { max-width: 100%; }
+  .wa-band-actions { width: 100%; flex-direction: column; }
+  .wa-band-actions .btn-wa-large,
+  .wa-band-actions .btn { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 600px) {
+  .spotlight-grid { grid-template-columns: 1fr; }
+  .spotlight-grid .spotlight-card { display: block !important; min-height: 260px; }
+  .spotlight-card { min-height: 260px; }
+  .spotlight-content { padding: 24px 20px; }
+  .spotlight-content h3 { font-size: clamp(18px, 5vw, 26px); }
+  .wa-band { padding: 44px 0; }
+  .wa-band-text h2 { font-size: clamp(20px, 6vw, 32px); }
+  .wa-band-text p  { font-size: 15px; }
+}
+
+@media (max-width: 480px) {
+  .bridal-banner { padding: 72px 0; background-attachment: scroll; }
+  .bridal-inner  { padding: 0 16px; }
+  .bridal-sub    { font-size: 15px; margin: 14px 0 28px; }
+  .bridal-ctas   { flex-direction: column; align-items: center; gap: 12px; }
+  .bridal-ctas .btn { width: 100%; max-width: 280px; justify-content: center; }
+  .wa-band-inner { align-items: center; text-align: center; }
+}
+
+/* ─── View-all button centering ─────────────────────────── */
+.view-all-wrap {
+  text-align: center;
+  margin-top: 48px;
+}
+
+/* ─── Instagram CTA section ─────────────────────────────── */
+.insta-cta-section {
+  background: var(--charcoal);
+  text-align: center;
+}
+.insta-cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.insta-cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 38px);
+  color: var(--white);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+.insta-cta-sub {
+  font-family: var(--font-elegant);
+  font-size: clamp(15px, 2.2vw, 18px);
+  color: rgba(255,255,255,0.5);
+  font-style: italic;
+  margin-bottom: 28px;
+  max-width: 520px;
+}
+.insta-cta-btn { padding: 14px 36px; }
+
+/* ─── MOBILE ─────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .insta-cta-section { padding: 48px 0; }
+  .insta-cta-title   { font-size: 20px; }
+  .insta-cta-sub     { font-size: 14px; }
+  .insta-cta-btn     { width: 100%; max-width: 280px; justify-content: center; }
+  .view-all-wrap     { margin-top: 32px; }
+  .view-all-wrap .btn { width: 100%; max-width: 280px; justify-content: center; }
+}

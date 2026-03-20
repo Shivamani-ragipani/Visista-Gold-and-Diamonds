@@ -1,0 +1,31 @@
+/* ═══════════════════════════════════════════════════════
+   VISISTA — Featured Products Grid v3.0
+   ═══════════════════════════════════════════════════════ */
+.featured-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+/* Staggered reveal animation */
+.featured-products-grid .pcard { animation: cardReveal 0.5s var(--ease-out) both; }
+.featured-products-grid .pcard:nth-child(1) { animation-delay: 0.05s; }
+.featured-products-grid .pcard:nth-child(2) { animation-delay: 0.10s; }
+.featured-products-grid .pcard:nth-child(3) { animation-delay: 0.15s; }
+.featured-products-grid .pcard:nth-child(4) { animation-delay: 0.20s; }
+.featured-products-grid .pcard:nth-child(5) { animation-delay: 0.25s; }
+.featured-products-grid .pcard:nth-child(6) { animation-delay: 0.30s; }
+.featured-products-grid .pcard:nth-child(7) { animation-delay: 0.35s; }
+.featured-products-grid .pcard:nth-child(8) { animation-delay: 0.40s; }
+@keyframes cardReveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 1100px) { .featured-products-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px)  { .featured-products-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+@media (max-width: 480px)  { .featured-products-grid { grid-template-columns: 1fr 1fr; gap: 12px; } }
+
+/* ─── MOBILE IMPROVEMENTS v4.0 ──────────────────────────── */
+@media (max-width: 1100px) { .featured-products-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px)  { .featured-products-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+@media (max-width: 480px)  { .featured-products-grid { grid-template-columns: 1fr 1fr; gap: 12px; } }
+@media (max-width: 360px)  { .featured-products-grid { grid-template-columns: 1fr; } }

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ragipanis-jewellers.vercel.app/sitemap.xml

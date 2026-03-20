@@ -1,0 +1,236 @@
+/* ═══════════════════════════════════════════════════════
+   VISISTA — Luxury Product Card v3.0
+   ═══════════════════════════════════════════════════════ */
+
+.pcard {
+  background: var(--white);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+.pcard:hover {
+  border-color: var(--gold);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.14), 0 0 0 1px rgba(201,151,58,0.2);
+  transform: translateY(-6px);
+}
+
+/* ─── Image Wrapper ─────────────────────────────────── */
+.pcard-img-wrap {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: var(--ivory);
+}
+.pcard-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: brightness(0.98);
+}
+.pcard:hover .pcard-img-wrap img {
+  transform: scale(1.08);
+  filter: brightness(1.02);
+}
+
+/* ─── Badges ────────────────────────────────────────── */
+.pcard-badge {
+  position: absolute; top: 14px; left: 14px;
+  font-size: 8px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; padding: 5px 10px;
+  z-index: 3;
+}
+.pcard-badge.new  {
+  background: var(--charcoal); color: var(--gold-light);
+  border: 1px solid rgba(201,151,58,0.3);
+}
+.pcard-badge.sale {
+  background: var(--maroon); color: var(--white);
+}
+
+.pcard-collection {
+  position: absolute; top: 14px; right: 14px;
+  font-size: 8px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; padding: 5px 10px;
+  z-index: 3; color: var(--white);
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* ─── Hover Overlay ─────────────────────────────────── */
+.pcard-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(15,15,15,0.85) 100%);
+  display: flex; align-items: flex-end; justify-content: center;
+  padding-bottom: 20px;
+  opacity: 0; transition: opacity 0.4s ease;
+}
+.pcard:hover .pcard-overlay { opacity: 1; }
+.pcard-quick {
+  background: transparent;
+  color: var(--white);
+  font-size: 10px; font-weight: 600; letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border: 1px solid rgba(255,255,255,0.6);
+  transition: all 0.3s ease;
+}
+.pcard-quick:hover { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+
+/* ─── Wishlist button ───────────────────────────────── */
+.pcard-wish {
+  position: absolute; top: 14px; right: 14px;
+  width: 32px; height: 32px;
+  background: rgba(255,255,255,0.9);
+  border: none; border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; color: var(--text-light);
+  transition: all 0.3s ease;
+  z-index: 4;
+  opacity: 0; transform: scale(0.8);
+}
+.pcard:hover .pcard-wish { opacity: 1; transform: scale(1); }
+.pcard-wish:hover { background: var(--maroon); color: var(--white); }
+
+/* ─── Body ──────────────────────────────────────────── */
+.pcard-body {
+  padding: 18px 16px 16px;
+  flex: 1; display: flex; flex-direction: column; gap: 6px;
+  border-top: 1px solid var(--border);
+}
+
+.pcard-cat {
+  font-size: 9px; font-weight: 700; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--gold);
+  display: flex; align-items: center; gap: 6px;
+}
+.pcard-cat::before {
+  content: '';
+  width: 20px; height: 1px;
+  background: var(--gold); display: inline-block;
+}
+
+.pcard-name {
+  font-family: var(--font-display);
+  font-size: 15px; font-weight: 600; color: var(--charcoal);
+  line-height: 1.3; margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color var(--transition);
+}
+.pcard-name:hover { color: var(--gold-dark); }
+
+.pcard-specs {
+  display: flex; gap: 12px;
+  font-size: 10px; color: var(--text-ghost);
+  font-weight: 500; letter-spacing: 0.5px;
+}
+.spec-icon { font-size: 9px; margin-right: 3px; vertical-align: middle; }
+.pcard-specs span {
+  display: flex; align-items: center; gap: 3px;
+}
+
+/* ─── Stars ─────────────────────────────────────────── */
+.pcard-rating { display: flex; align-items: center; gap: 6px; }
+.stars { color: var(--gold); font-size: 10px; display: flex; gap: 2px; }
+.star-empty { color: var(--pearl); }
+.pcard-rating > span { font-size: 10px; color: var(--text-light); font-weight: 500; }
+
+/* ─── Price ─────────────────────────────────────────── */
+.pcard-price {
+  display: flex; align-items: baseline; gap: 8px;
+  margin-top: 4px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.pcard-price-curr {
+  font-family: var(--font-display);
+  font-size: 19px; font-weight: 700;
+  color: var(--charcoal);
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.pcard-price-note {
+  font-size: 9px; color: var(--text-ghost);
+  letter-spacing: 1px; text-transform: uppercase;
+  -webkit-text-fill-color: var(--text-ghost);
+}
+.price-loading {
+  font-size: 12px; color: var(--text-light);
+  font-style: italic; font-family: var(--font-elegant);
+  animation: pulse-text 1.5s ease infinite;
+}
+@keyframes pulse-text { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+/* ─── Actions ───────────────────────────────────────── */
+.pcard-actions {
+  display: flex; gap: 8px; margin-top: 10px;
+}
+.pcard-cart {
+  flex: 1; justify-content: center;
+  font-size: 10px !important; letter-spacing: 1.5px !important;
+  padding: 10px 12px !important;
+  border: 1px solid var(--charcoal) !important;
+  background: transparent !important;
+  color: var(--charcoal) !important;
+  transition: all 0.3s ease !important;
+}
+.pcard-cart:hover {
+  background: var(--charcoal) !important;
+  color: var(--white) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+.pcard-cart.added {
+  background: #25D366 !important;
+  border-color: #25D366 !important;
+  color: var(--white) !important;
+}
+.pcard-buy {
+  flex: 1; justify-content: center;
+  font-size: 10px !important; letter-spacing: 1.5px !important;
+  padding: 10px 12px !important;
+}
+
+/* ─── Hover card lift ───────────────────────────────── */
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.pcard-enter {
+  animation: cardIn 0.5s var(--ease-out) both;
+}
+
+@media (max-width: 480px) {
+  .pcard-body { padding: 14px 12px 12px; }
+  .pcard-price-curr { font-size: 17px; }
+  .pcard-name { font-size: 14px; }
+}
+
+/* ─── MOBILE IMPROVEMENTS v4.0 ──────────────────────────── */
+@media (max-width: 360px) {
+  .pcard-body { padding: 12px 10px 10px; }
+  .pcard-price-curr { font-size: 15px; }
+  .pcard-name { font-size: 13px; }
+  .pcard-actions { gap: 6px; }
+  .pcard-cart, .pcard-buy {
+    font-size: 9px !important;
+    padding: 9px 8px !important;
+    letter-spacing: 1px !important;
+  }
+}
+
+/* Ensure touch targets are 44px minimum */
+@media (max-width: 768px) {
+  .pcard-cart, .pcard-buy { min-height: 40px; }
+  .pcard-wish { opacity: 1; transform: scale(1); }
+}
